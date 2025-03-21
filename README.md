@@ -1,27 +1,138 @@
-# Frontend
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 17.3.6.
+# 📚 Angular Frontend (Books Management)
 
-## Development server
+This project is an Angular-based frontend application that consumes a RESTful API (built with Flask) for managing books. It allows users to list, add, update, and delete books.
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
+---
 
-## Code scaffolding
+## 🚀 Environment Requirements
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+- Node.js (18.x or higher)
+- npm (automatically installed with Node.js)
+- Angular CLI (`npm install -g @angular/cli`)
 
-## Build
+---
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
+## ⚙️ Installing Dependencies
 
-## Running unit tests
+In the project root directory, run:
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+```bash
+npm install
+```
 
-## Running end-to-end tests
+---
 
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
+## ▶️ Running Locally (Development Mode)
 
-## Further help
+```bash
+ng serve
+```
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+Your application will be accessible at:
+```
+http://localhost:4200
+```
+
+---
+
+## 🐳 Running with Docker (Production)
+
+To build the Docker image:
+
+```bash
+docker build -t frontend-app .
+```
+
+To run the Docker container:
+
+```bash
+docker run -d -p 80:80 frontend-app
+```
+
+Then, access your application at:
+
+```
+http://localhost
+```
+
+---
+
+## 🛠️ Backend API Configuration
+
+By default, the Angular application is configured to connect to the Flask backend at:
+
+```typescript
+// src/app/book.service.ts
+private apiUrl = 'http://localhost:8000/books/';
+```
+
+If your backend uses a different port or address, update this URL accordingly.
+
+---
+
+## 📂 Project Structure
+
+```
+frontend/
+├── Dockerfile
+├── package.json
+├── angular.json
+├── tsconfig.json
+└── src/
+    ├── app/
+    │   ├── app.component.ts
+    │   ├── app.module.ts
+    │   ├── book.service.ts
+    │   └── book-list/
+    │       ├── book-list.component.ts
+    │       ├── book-list.component.html
+    │       └── book-list.component.css
+    ├── assets/
+    ├── environments/
+    ├── index.html
+    ├── main.ts
+    └── styles.css
+```
+
+---
+
+## 📋 Implemented Features
+
+- [x] List existing books from the REST API.
+- [x] Add new books using a form.
+- [x] Delete existing books.
+- [ ] Update existing books (optional, pending).
+
+---
+
+## 🔖 Technologies Used
+
+- **Angular 18**
+- **TypeScript**
+- **HttpClient (Angular)**
+- **Docker**
+- **Nginx (for production)**
+
+---
+
+## 🚨 Common Issues
+
+### CORS Issues:
+Ensure your backend (Flask) is properly configured with Flask-CORS to accept requests from your Angular frontend.
+
+---
+
+## 🤝 Contributing
+
+1. Fork this repository.
+2. Create your branch (`git checkout -b feature/new-feature`).
+3. Commit your changes clearly (`git commit -m 'Add new feature'`).
+4. Push to your branch (`git push origin feature/new-feature`).
+5. Create a Pull Request.
+
+---
+
+## 📝 License
+
+This project is licensed under the MIT License. Check the [LICENSE](LICENSE) file for more details.
