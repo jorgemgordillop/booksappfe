@@ -1,138 +1,27 @@
+# Frontend
 
-# 📚 Frontend Angular (Gestión de Libros)
+This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 17.3.6.
 
-Este proyecto es la interfaz gráfica desarrollada con Angular, que consume una API RESTful (desarrollada en Flask) para gestionar libros. Permite listar, agregar, actualizar y eliminar libros.
+## Development server
 
----
+Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
 
-## 🚀 Requisitos del entorno
+## Code scaffolding
 
-- Node.js (18.x o superior)
-- npm (se instala automáticamente con Node.js)
-- Angular CLI (`npm install -g @angular/cli`)
+Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
 
----
+## Build
 
-## ⚙️ Instalación de dependencias
+Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
 
-En el directorio raíz del proyecto, ejecuta:
+## Running unit tests
 
-```bash
-npm install
-```
+Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
 
----
+## Running end-to-end tests
 
-## ▶️ Ejecutar en modo desarrollo local
+Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
 
-```bash
-ng serve
-```
+## Further help
 
-La aplicación estará disponible en:
-```
-http://localhost:4200
-```
-
----
-
-## 🐳 Ejecutar con Docker (Producción)
-
-Para construir la imagen Docker:
-
-```bash
-docker build -t frontend-app .
-```
-
-Para ejecutar la aplicación en Docker:
-
-```bash
-docker run -d -p 80:80 frontend-app
-```
-
-Accede a la aplicación desde:
-
-```
-http://localhost
-```
-
----
-
-## 🛠️ Configuración del backend API
-
-Por defecto, la aplicación Angular está configurada para conectarse al backend Flask en:
-
-```typescript
-// src/app/book.service.ts
-private apiUrl = 'http://localhost:8000/books/';
-```
-
-Si tu backend utiliza otro puerto o dirección, modifica claramente esta URL.
-
----
-
-## 📂 Estructura del proyecto Angular
-
-```
-frontend/
-├── Dockerfile
-├── package.json
-├── angular.json
-├── tsconfig.json
-└── src/
-    ├── app/
-    │   ├── app.component.ts
-    │   ├── app.module.ts
-    │   ├── book.service.ts
-    │   └── book-list/
-    │       ├── book-list.component.ts
-    │       ├── book-list.component.html
-    │       └── book-list.component.css
-    ├── assets/
-    ├── environments/
-    ├── index.html
-    ├── main.ts
-    └── styles.css
-```
-
----
-
-## 📋 Funcionalidades implementadas
-
-- [x] Listar libros existentes desde la API REST.
-- [x] Agregar nuevos libros mediante formulario.
-- [x] Eliminar libros existentes.
-- [ ] Actualizar libros existentes (opcional pendiente).
-
----
-
-## 🔖 Tecnologías utilizadas
-
-- **Angular 18**
-- **TypeScript**
-- **HttpClient (Angular)**
-- **Docker**
-- **Nginx (para producción)**
-
----
-
-## 🚨 Problemas comunes
-
-### Problemas con CORS:
-Asegúrate que el backend tenga correctamente configurado Flask-CORS para aceptar peticiones del frontend Angular.
-
----
-
-## 🤝 Colaborar
-
-1. Haz un fork del proyecto.
-2. Crea tu rama (`git checkout -b feature/nueva-funcionalidad`).
-3. Realiza un commit claro (`git commit -m 'Nueva funcionalidad'`).
-4. Sube los cambios a la rama (`git push origin feature/nueva-funcionalidad`).
-5. Crea un Pull Request.
-
----
-
-## 📝 Licencia
-
-Este proyecto está bajo licencia MIT. Puedes consultar [LICENSE](LICENSE) para más detalles.
+To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
